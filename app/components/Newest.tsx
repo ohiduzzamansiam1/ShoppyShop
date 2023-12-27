@@ -14,9 +14,11 @@ async function getNewestProducts() {
         "image": images[1].asset->url,
         discountPercentage
       }`;
-  const newestProducts = await client.fetch(query, { next: 60 });
+  const newestProducts = await client.fetch(query);
   return newestProducts;
 }
+
+export const revalidate = 60;
 
 async function Newest() {
   const newestProducts: SimplifiedProducts[] = await getNewestProducts();

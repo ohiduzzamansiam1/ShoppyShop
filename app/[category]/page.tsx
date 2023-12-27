@@ -13,9 +13,11 @@ async function getCategoryProducts(category: string) {
         discountPercentage,
         "category": category->name,
       }`;
-  const products = await client.fetch(query);
+  const products = await client.fetch(query, { next: 60 });
   return products;
 }
+
+export const revalidate = 60;
 
 async function CategoryPage({ params }: { params: { category: string } }) {
   const products: SimplifiedProducts[] = await getCategoryProducts(
