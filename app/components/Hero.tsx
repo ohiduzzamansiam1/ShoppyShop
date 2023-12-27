@@ -5,7 +5,7 @@ import { client, urlFor } from "../lib/sanity";
 async function getHeroImages() {
   const query = "*[_type == 'heroImage'][0]";
 
-  const hero_images = await client.fetch(query);
+  const hero_images = await client.fetch(query, { next: 60 });
 
   return hero_images;
 }

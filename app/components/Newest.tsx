@@ -14,7 +14,7 @@ async function getNewestProducts() {
         "image": images[1].asset->url,
         discountPercentage
       }`;
-  const newestProducts = await client.fetch(query);
+  const newestProducts = await client.fetch(query, { next: 60 });
   return newestProducts;
 }
 

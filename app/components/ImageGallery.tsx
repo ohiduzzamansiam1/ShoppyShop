@@ -19,6 +19,7 @@ function ImageGallery({
           <div key={idx} className="overflow-hidden rounded-lg bg-gray-100">
             <Image
               src={urlFor(image).url()}
+              loading="lazy"
               alt="Product images"
               width={200}
               height={200}
@@ -37,6 +38,7 @@ function ImageGallery({
           src={urlFor(bigImage).url()}
           alt="Product images"
           width={500}
+          loading="lazy"
           height={500}
           className="h-full w-full object-cover object-center transition duration-300"
         />

@@ -23,7 +23,7 @@ async function getProduct(slug: string) {
         totalRatings,
         discountPercentage,
       }`;
-  const product = await client.fetch(query);
+  const product = await client.fetch(query, { next: 60 });
   return product;
 }
 

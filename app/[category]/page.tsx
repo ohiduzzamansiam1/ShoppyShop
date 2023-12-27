@@ -37,6 +37,7 @@ async function CategoryPage({ params }: { params: { category: string } }) {
                   <Image
                     src={product.image}
                     alt={product.name}
+                    loading="lazy"
                     className="w-full h-full object-cover object-center lg:w-full lg:h-full"
                     width={300}
                     height={300}
