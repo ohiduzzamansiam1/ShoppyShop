@@ -59,7 +59,10 @@ async function Newest() {
               <div className="mt-4 flex text-gray-800 justify-between items-start">
                 <div>
                   <h3 className="text-sm font-medium">
-                    <Link href={`/product/${product.slug}`}>
+                    <Link
+                      href={`/product/${product.slug}`}
+                      className="line-clamp-2"
+                    >
                       {product.name}
                     </Link>
                   </h3>
