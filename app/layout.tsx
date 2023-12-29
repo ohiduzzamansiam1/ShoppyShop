@@ -1,3 +1,4 @@
+import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
@@ -25,6 +26,7 @@ export default function RootLayout({
         <CartProvider>
           <ShoppingCartModal />
           <Navbar />
+          <GoogleAnalytics measurementId="G-B5KC4GC7XQ" />
           {children}
           <Analytics />
           <SpeedInsights />
